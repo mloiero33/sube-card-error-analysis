@@ -1,0 +1,10 @@
+streamlit
+pandas
+openpyxl
+folium
+streamlit-folium
+matplotlib
+reportlab
+contextily
+pyproj
+xlsxwriter
