@@ -40,7 +40,48 @@ Open the deployed app here:
 
 https://sube-card-error-analysis-bkpk6whvgvogjsdkam4wxn.streamlit.app/
 
+## Screenshots
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Error Heatmap
+
+![Heatmap](screenshots/map.png)
+
+### Generated PDF Report
+
+![PDF Report](screenshots/report.png)
 ---
+## How it works
+
+1. The application loads two Excel files:
+
+   - **error.xlsx**: rejected SUBE card transactions recorded by the validator.
+   - **detalle.xlsx**: ticket sales records.
+
+2. The system cleans and normalizes the data.
+
+3. Transactions are matched by card number and compared by time.
+
+4. If a rejected transaction has a corresponding sale within a configurable time tolerance window, it is marked as:
+
+   - **OK**
+
+5. Otherwise it is classified as:
+
+   - **NO MATCH**
+
+6. The application then generates several analyses:
+
+   - Top error descriptions
+   - Vehicles with the most errors
+   - Frequently failing cards
+   - Hourly error distribution
+   - Geographic heatmap of error locations
+
+7. Users can export results to Excel or generate a **PDF report** automatically.
 
 ## Project Structure
 
